@@ -4,6 +4,35 @@ A full-stack web application for image CRUD with a computer-vision text-overlay 
 
 ---
 
+## Screenshots
+
+### Gallery View
+Browse all uploaded images in a responsive card grid. Cards show a thumbnail, title, file size, date, and an **Overlay** badge when a text overlay has been generated.
+
+![Gallery View](docs/screenshots/gallery.png)
+
+### Upload Image
+Upload images via a drag-and-drop style form. Provide a title, optional description, and optional overlay text at upload time.
+
+![Upload Form](docs/screenshots/upload.png)
+
+### Image Detail
+View full-size images with metadata (date, size, MIME type). Use the **Edit** and **Delete** actions, or generate a text overlay directly from this page.
+
+![Image Detail](docs/screenshots/detail.png)
+
+### Text Overlay Result
+After generating an overlay, switch between the **Original** and **With Overlay** tabs. The overlay renders white text on a semi-transparent dark bar at the bottom of the image.
+
+![Text Overlay](docs/screenshots/overlay.png)
+
+### Edit Metadata
+Update the image title, description, and overlay text from a dedicated edit form.
+
+![Edit Metadata](docs/screenshots/edit.png)
+
+---
+
 ## Tech Stack
 
 | Layer | Technology | Why |
@@ -55,6 +84,7 @@ A full-stack web application for image CRUD with a computer-vision text-overlay 
 
 ```
 imager/
+├── docs/screenshots/             # README demo images
 ├── ImageVault.API/               # ASP.NET Core backend
 │   ├── Controllers/
 │   │   └── ImagesController.cs   # REST endpoints
