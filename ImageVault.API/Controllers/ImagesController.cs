@@ -10,7 +10,6 @@ namespace ImageVault.API.Controllers;
 [Route("api/[controller]")]
 public class ImagesController(AppDbContext db, IImageService imageService) : ControllerBase
 {
-    // GET /api/images
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -18,7 +17,6 @@ public class ImagesController(AppDbContext db, IImageService imageService) : Con
         return Ok(items.Select(ToDto));
     }
 
-    // GET /api/images/{id}
     [HttpGet("{id:int}")]
     public async Task<IActionResult> GetById(int id)
     {
@@ -26,7 +24,7 @@ public class ImagesController(AppDbContext db, IImageService imageService) : Con
         return item is null ? NotFound() : Ok(ToDto(item));
     }
 
-    // POST /api/images
+
     [HttpPost]
     [RequestSizeLimit(11 * 1024 * 1024)]
     [Consumes("multipart/form-data")]
@@ -63,7 +61,7 @@ public class ImagesController(AppDbContext db, IImageService imageService) : Con
         }
     }
 
-    // PUT /api/images/{id}
+
     [HttpPut("{id:int}")]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateImageRequest req)
     {
@@ -100,7 +98,7 @@ public class ImagesController(AppDbContext db, IImageService imageService) : Con
         return Ok(ToDto(item));
     }
 
-    // DELETE /api/images/{id}
+
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> Delete(int id)
     {
@@ -113,7 +111,7 @@ public class ImagesController(AppDbContext db, IImageService imageService) : Con
         return NoContent();
     }
 
-    // POST /api/images/{id}/overlay
+
     [HttpPost("{id:int}/overlay")]
     public async Task<IActionResult> GenerateOverlay(int id, [FromBody] OverlayRequest req)
     {

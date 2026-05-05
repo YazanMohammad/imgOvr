@@ -70,12 +70,11 @@ public class ImageService(IWebHostEnvironment env) : IImageService
         var collection = new FontCollection();
         FontFamily family;
 
-        // Try to find a system font; fall back to any available font
         if (!collection.TryGet("Arial", out family) &&
             !collection.TryGet("DejaVu Sans", out family) &&
             !collection.TryGet("Liberation Sans", out family))
         {
-            // Use SystemFonts which reads from the OS
+            // Use SysFont
             if (!SystemFonts.TryGet("Arial", out family) &&
                 !SystemFonts.TryGet("Segoe UI", out family) &&
                 !SystemFonts.TryGet("DejaVu Sans", out family))
