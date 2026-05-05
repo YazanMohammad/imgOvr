@@ -1,0 +1,16 @@
+# .NET
+bin/
+obj/
+*.db
+*.db-shm
+*.db-wal
+wwwroot/uploads/
+
+# Node
+node_modules/
+frontend/dist/
+
+# IDE
+.vs/
+.vscode/
+*.user

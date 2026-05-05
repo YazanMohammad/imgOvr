@@ -1,0 +1,6 @@
+@ImageVault.API_HostAddress = http://localhost:5104
+
+GET {{ImageVault.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
